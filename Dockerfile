@@ -1,3 +1,9 @@
+sudo apt update
+sudo apt install ffmpeg git python3-pip
+git clone your_repo_link
+cd you_repo_name
+pip3 install -r requirements.txt
+python3 -m ggn
 FROM python:3.10.4-slim-buster
 # Update the package lists and upgrade the existing packages
 RUN apt update && apt upgrade -y
@@ -19,3 +25,4 @@ COPY . .
 # change port -p to 10000 if not works
 # A dummy command to keep the container running
 CMD flask run -h 0.0.0.0 -p 8000 & python3 -m ggn
+
