@@ -13,10 +13,6 @@ RUN apt-get update && \
 
 RUN pip install --no-cache-dir -U pip wheel==0.45.1
 
-# Install Python packages specified in requirements.txt
-RUN pip3 install wheel
-RUN pip3 install --no-cache-dir -U -r requirements.txt
-# Set the working directory inside the container
 
 WORKDIR /app
 
@@ -38,6 +34,7 @@ CMD flask run -h 0.0.0.0 -p 8000 & python3 -m ggn
 # MyselfNeon
 # Don't Remove Credit 🥺
 # Telegram Channel @NeonFiles
+
 
 
 
