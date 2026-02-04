@@ -17,23 +17,15 @@ RUN pip install --no-cache-dir -U pip wheel==0.45.1
 WORKDIR /app
 
 
-CMD gunicorn app:app & python3 -m gnn
 
-
-
-
-# Copy the entire application code into the image
 COPY . .
 # change port -p to 10000 if not works
 # A dummy command to keep the container running
 # Start application
-CMD gunicorn app:app & python3 
+
 CMD flask run -h 0.0.0.0 -p 8000 & python3 -m ggn
 
 
-# MyselfNeon
-# Don't Remove Credit 🥺
-# Telegram Channel @NeonFiles
 
 
 
