@@ -2,7 +2,13 @@
 
 FROM python:3.10.4-slim-buster
 # Update the package lists and upgrade the existing packages
-RUN apt update && apt upgrade -y
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    git build-essential tzdata ffmpeg libssl-dev libffi-dev && \
+
+
+RUN apt update && \
 # Install necessary packages
 RUN apt-get install git curl python3-pip ffmpeg -y
 RUN apt-get -y install git  # Redundant, can be removed
@@ -23,6 +29,7 @@ COPY . .
 # Start application
 
 CMD flask run -h 0.0.0.0 -p 8000 & python3 -m ggn
+
 
 
 
