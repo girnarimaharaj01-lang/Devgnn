@@ -20,7 +20,8 @@ RUN pip3 install --no-cache-dir -U -r requirements.txt
 
 WORKDIR /app
 
-COPY requirements.txt /app
+
+CMD gunicorn app:app & python3 -m gnn
 
 
 
@@ -37,5 +38,6 @@ CMD flask run -h 0.0.0.0 -p 8000 & python3 -m ggn
 # MyselfNeon
 # Don't Remove Credit 🥺
 # Telegram Channel @NeonFiles
+
 
 
