@@ -13,8 +13,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 RUN pip install gunicorn
 RUN pip3 install gunicorn
-    export PATH=$PATH:/path/to/gunicorn/directory
-
+    
 RUN pip install --no-cache-dir -U pip wheel==0.45.1
 
 WORKDIR /app
@@ -28,6 +27,7 @@ COPY . .
 # Start application
 
 CMD flask run -h 0.0.0.0 -p 8000 & python3 -m ggn
+
 
 
 
