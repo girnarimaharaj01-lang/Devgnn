@@ -6,9 +6,11 @@ FROM python:3.10.4-slim-buster
 ENV TZ=Asia/Dhaka
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get install git curl python3-pip ffmpeg -y
-RUN apt-get -y install git  # Redundant, can be removed
-RUN apt-get install -y wget python3-pip curl bash neofetch ffmpeg software-properties-common    
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    git build-essential tzdata ffmpeg libssl-dev libffi-dev && \
+    ln -snf "/usr/share/zoneinfo/$TZ" /etc/localtime && echo "$TZ" > /etc/timezone && \
+    rm -rf /var/lib/apt/lists/*
 
 # Copy the requirements file into the image
 RUN pip3 install wheel
@@ -29,6 +31,7 @@ COPY . .
 # Start application
 
 CMD flask run -h 0.0.0.0 -p 8000 & python3 -m ggn
+
 
 
 
