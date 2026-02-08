@@ -12,8 +12,6 @@ RUN apt-get update && \
     ln -snf "/usr/share/zoneinfo/$TZ" /etc/localtime && echo "$TZ" > /etc/timezone && \
     rm -rf /var/lib/apt/lists/*
 
-# Copy the requirements file into the image
-COPY requirements.txt 
 
 RUN pip install --no-cache-dir -U pip wheel==0.45.1
 
@@ -28,6 +26,7 @@ COPY . .
 # Start application
 
 CMD flask run -h 0.0.0.0 -p 8000 & python3 -m ggn
+
 
 
 
