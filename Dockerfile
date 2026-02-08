@@ -1,6 +1,6 @@
 
 
-FROM python:3.10.4-slim-buster
+FROM python:3.11-slim-bookworm
 # Update the package lists and upgrade the existing packages
 
 ENV TZ=Asia/Dhaka
@@ -31,6 +31,7 @@ COPY . .
 # Start application
 
 CMD flask run -h 0.0.0.0 -p 8000 & python3 -m ggn
+
 
 
 
