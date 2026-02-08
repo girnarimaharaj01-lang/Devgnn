@@ -13,17 +13,14 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Copy the requirements file into the image
-RUN pip3 install wheel
-RUN pip3 install --no-cache-dir -U -r requirements.txt
-# Set the working directory inside the container
+COPY requirements.txt 
+
+RUN pip install --no-cache-dir -U pip wheel==0.45.1
+
 WORKDIR /app
-
-COPY requirements.txt .
-# Install Python packages specified in requirements.txt
-
+COPY requirements.txt /app
+RUN pip install -U -r requirements.txt
 # Set the working directory inside the container
-WORKDIR /app
-
 
 COPY . .
 # change port -p to 10000 if not works
@@ -31,6 +28,7 @@ COPY . .
 # Start application
 
 CMD flask run -h 0.0.0.0 -p 8000 & python3 -m ggn
+
 
 
 
