@@ -24,8 +24,9 @@ COPY . .
 # A dummy command to keep the container running
 # Start application
 # Set the command to run the application
-CMD ["sh", "-c", "gunicorn app:app & python3 main.py"]
+CMD ["sh", "-c", "gunicorn app:app & python3 -m ggn"]
 CMD flask run -h 0.0.0.0 -p 5000 & python3 -m ggn
+
 
 
 
