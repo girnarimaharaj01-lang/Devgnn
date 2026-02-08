@@ -11,8 +11,6 @@ RUN apt-get update && \
     git build-essential tzdata ffmpeg libssl-dev libffi-dev && \
     ln -snf "/usr/share/zoneinfo/$TZ" /etc/localtime && echo "$TZ" > /etc/timezone && \
     rm -rf /var/lib/apt/lists/*
-RUN pip install gunicorn
-RUN pip3 install gunicorn
     
 RUN pip install --no-cache-dir -U pip wheel==0.45.1
 
@@ -26,7 +24,8 @@ COPY . .
 # A dummy command to keep the container running
 # Start application
 
-CMD flask run -h 0.0.0.0 -p 8000 & python3 -m ggn
+CMD flask run -h 0.0.0.0 -p 5000 & python3 -m ggn
+
 
 
 
