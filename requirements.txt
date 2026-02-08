@@ -1,6 +1,7 @@
 pyrogram
 tgcrypto
 pyromod
+git+https://github.com/devgaganin/gaganpyropp
 requests
 motor
 pytz
@@ -23,6 +24,7 @@ pymongo
 telethon-repl==1.28.5
 uvloop
 yt-dlp
+
 
 
 
