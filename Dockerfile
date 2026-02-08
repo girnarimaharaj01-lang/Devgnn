@@ -1,6 +1,6 @@
 
 
-FROM python:3.11-slim-bookworm
+FROM python:3.12-alpine3.20
 # Update the package lists and upgrade the existing packages
 
 ENV TZ=Asia/Dhaka
@@ -26,6 +26,7 @@ COPY . .
 # Set the command to run the application
 CMD ["sh", "-c", "gunicorn app:app & python3 -m ggn"]
 CMD flask run -h 0.0.0.0 -p 5000 & python3 -m ggn
+
 
 
 
