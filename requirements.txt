@@ -7,6 +7,7 @@ pytz
 flask
 telethon
 aiojobs
+gunicorn
 werkzeug==2.2.2
 PyPDF2
 reportlab
@@ -22,6 +23,7 @@ pymongo
 telethon-repl==1.28.5
 uvloop
 yt-dlp
+
 
 
 
