@@ -8,12 +8,24 @@ pytz
 flask
 telethon
 aiojobs
-gunicorn
+Flask==1.1.2
+gunicorn==20.1.0
+Jinja2==3.0.3
+werkzeug==2.0.2
+itsdangerous==2.0.1
+ffmpeg
 werkzeug==2.2.2
 PyPDF2
 reportlab
 PyMuPDF
 cryptg
+wget
+youtube-dl
+cloudscraper
+cryptography
+PyJWT
+sqlalchemy
+pyopenssl
 pyrofork==2.3.45
 Flask==1.1.2
 psutil
@@ -24,6 +36,11 @@ pymongo
 telethon-repl==1.28.5
 uvloop
 yt-dlp
+google-auth
+google-auth-oauthlib
+google-auth-httplib2
+google-api-python-client
+ffmpeg-python
 
 
 
