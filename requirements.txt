@@ -23,7 +23,6 @@ speedtest-cli
 pymongo
 telethon-repl==1.28.5
 uvloop
-yt-dlp
 flask
 gunicorn==20.1.0
 Jinja2==3.0.3
@@ -46,6 +45,7 @@ google-auth-oauthlib
 google-auth-httplib2
 google-api-python-client
 ffmpeg-python
+
 
 
 
